@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Compreender como os seres vivos do oceano interagem entre si e com o ambiente, analisando fatores como alimentação, cadeias alimentares, poluição, temperatura da água e preservação dos habitats." />
+  <title>Ecossistemas Marinhos — AbyssMind</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="brand" aria-hidden="false">
+      <div class="logo" aria-hidden="true">AM</div>
+      <div>
+        <div style="font-weight:700">AbyssMind</div>
+        <div style="font-size:12px;color:var(--muted)">Projeto: Fundo do Mar</div>
+      </div>
+    </div>
+
+    <nav aria-label="Navegação principal">
+      <a href="#curiosidades">Curiosidades</a>
+      <a href="#fatos">Fatos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="controls" role="toolbar" aria-label="Controles da página">
+      <button id="toggleTheme" class="btn" aria-pressed="false" title="Alternar modo claro/escuro">Modo</button>
+      <button class="btn" id="skipToContent" onclick="document.querySelector('main').focus();">Ir para conteúdo</button>
+    </div>
+  </header>
+
+  <main tabindex="-1">
+    <!-- Hero -->
+    <section class="hero fade-in" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Ecossistemas Marinhos</h1>
+        <p class="lead">Cuidar do mar é preservar a vida.</p>
+        <p class="lead" style="font-size:15px; margin-top:6px;">
+          Compreender como os seres vivos do oceano interagem entre si e com o ambiente, analisando fatores como alimentação, cadeias alimentares, poluição, temperatura da água e preservação dos habitats.
+        </p>
+
+        <div class="hero-actions" role="group" aria-label="Ações principais">
+          <button id="abrirIA" class="btn btn-primary" aria-label="Iniciar reconhecimento facial">
+            Reconhecimento Facial
+          </button>
+
+          <button id="btnAbrirChatbot" class="btn btn-outline" aria-label="Abrir chatbot" aria-controls="panelChatbot">
+            Abrir Chatbot
+          </button>
+
+          <div class="pill" title="Equipe do projeto" aria-hidden="false" style="display:inline-flex;align-items:center;">
+            <!-- TODO: Atualizar ordem dos nomes se necessário -->
+            Equipe: Enzo S. Ferreira, Miguel C. Cardoso, Pedro H. A. Souza, Julia Queiroz, Hailla C. S. de Abr
+          </div>
+        </div>
+
+        <div class="meta" aria-hidden="false">
+          <div class="pill">Tema: Ecossistemas Marinhos</div>
+          <div class="pill">Projeto: AbyssMind</div>
+        </div>
+      </div>
+
+      <figure class="hero-visual" aria-hidden="false">
+        <!-- IMAGE HERO -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Blue_Linckia_Starfish.JPG/960px-Blue_Linckia_Starfish.JPG"
+             alt="Estrela-do-mar azul em habitat marinho" />
+      </figure>
+    </section>
+
+    <!-- Curiosidades -->
+    <section id="curiosidades" aria-labelledby="curiosidades-title">
+      <h2 id="curiosidades-title">Curiosidades</h2>
+      <div class="curiosidades" role="list">
+        <div class="curio" role="listitem">
+          <div class="dot" aria-hidden="true">1</div>
+          <p><strong>Mais de 90%</strong> dos oceanos ainda não foram explorados.</p>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="dot" aria-hidden="true">2</div>
+          <p><strong>Os mares produzem</strong> mais de 50% do oxigênio que respiramos.</p>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="dot" aria-hidden="true">3</div>
+          <p><strong>Existem mais de 230 mil</strong> espécies marinhas catalogadas.</p>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="dot" aria-hidden="true">4</div>
+          <p><strong>O ponto mais profundo</strong> do oceano tem cerca de 11 km de profundidade.</p>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="dot" aria-hidden="true">5</div>
+          <p><strong>Há montanhas submarinas</strong> maiores que o Monte Everest (em altura relativa).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fatos / Ciência -->
+    <section id="fatos" aria-labelledby="fatos-title">
+      <h2 id="fatos-title">Fatos & Ciência</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="f1">
+          <h3 id="f1">Biodiversidade Marinha</h3>
+          <p>Os oceanos abrigam cerca de 80% de toda a vida na Terra, com milhões de espécies ainda não descobertas.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f2">
+          <h3 id="f2">Recifes de Corais</h3>
+          <p>Cobrindo menos de 1% do fundo do mar, os recifes sustentam cerca de 25% das espécies marinhas.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f3">
+          <h3 id="f3">Manguezais e Proteção Costeira</h3>
+          <p>Manguezais filtram poluentes, capturam carbono e atuam como berçários para muitas espécies costeiras.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">Galeria</h2>
+      <div class="gallery" role="list">
+        <figure class="figure" role="listitem">
+          <img src="https://cdn.brasil247.com/pb-b247gcp/swp/jtjeq9/media/20180710130736_eb92c6224f4a1da5245af8bac9a09b7131fdd583962f54dedeb07c776981bf97.jpeg" alt="Costa marinha" />
+          <figcaption>Praia e ecossistema costeiro</figcaption>
+        </figure>
+
+        <figure class="figure" role="listitem">
+          <img src="https://cdn.shopify.com/s/files/1/0596/3035/4493/files/shutterstock_248941720_629057716509-960x640-1688349856991_800x_a21a33fb-0327-4651-a3dd-7a5cf667069f_1024x1024.webp?v=1714046313" alt="Peixes e corais" />
+          <figcaption>Recife com peixes coloridos</figcaption>
+        </figure>
+
+        <figure class="figure" role="listitem">
+          <img src="https://www.coripa.pr.gov.br/arquivos/noticias/1344/not_1494_m.jpg" alt="Manguezal" />
+          <figcaption>Manguezal brasileiro</figcaption>
+        </figure>
+
+        <figure class="figure" role="listitem">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Blue_Linckia_Starfish.JPG/960px-Blue_Linckia_Starfish.JPG" alt="Estrela do mar azul" />
+          <figcaption>Estrela-do-mar azul</figcaption>
+        </figure>
+
+        <figure class="figure" role="listitem">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUDn614G52SOu0uo_gt2SIONzGOxpYLWT-aA&s" alt="Vida marinha em grande área" />
+          <figcaption>Panorama de habitat marinho</figcaption>
+        </figure>
+
+        <figure class="figure" role="listitem">
+          <img src="https://www.auniao.pb.gov.br/noticias/caderno_diversidade/ecossistemas-marinhos-do-litoral-paraibano/whatsapp-image-2023-03-22-at-13-24-00.jpeg/@@images/214a527c-a042-4a74-944e-086d56556778.jpeg" alt="Comunidade costeira e natureza" />
+          <figcaption>Comunidade e ecossistema costeiro</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary>O que são ecossistemas marinhos?</summary>
+          <p>Ambientes aquáticos de água salgada que abrigam diversas formas de vida, como recifes, manguezais e plâncton.</p>
+        </details>
+
+        <details>
+          <summary>Qual a importância dos ecossistemas marinhos?</summary>
+          <p>Regulam o clima, produzem oxigênio, fornecem alimento e mantêm cadeias alimentares essenciais ao planeta.</p>
+        </details>
+
+        <details>
+          <summary>O que ameaça os ecossistemas marinhos?</summary>
+          <p>Poluição (incl. plástico), pesca predatória, aquecimento global e destruição de habitats costeiros.</p>
+        </details>
+
+        <details>
+          <summary>Como podemos proteger os ecossistemas marinhos?</summary>
+          <p>Reduzindo uso de plástico, adotando pesca sustentável, preservando áreas marinhas protegidas e restaurando habitats.</p>
+        </details>
+
+        <details>
+          <summary>Os mares produzem oxigênio?</summary>
+          <p>Sim — fitoplâncton e algas marinhas produzem mais da metade do oxigênio global.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section aria-label="Chamada para ação">
+      <div class="cta" role="region" aria-labelledby="cta-title">
+        <div>
+          <h3 id="cta-title" style="margin:0 0 6px 0">Quer aprender mais?</h3>
+          <p style="margin:0;color:var(--muted)">Explore materiais, participe de ações locais e baixe guias de boas práticas.</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <a href="#galeria" class="btn" role="button">Aprenda mais</a>
+          <a href="#curiosidades" class="btn btn-outline" role="button">Ver curiosidades</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Créditos / Fontes -->
+    <section aria-labelledby="fontes-title">
+      <h2 id="fontes-title">Créditos & Fontes</h2>
+      <p style="color:var(--muted);margin:6px 0 0 0;">
+        <!-- TODO: Substituir por links completos e citar autores conforme padrão acadêmico -->
+        Imagens e informações: fontes internas do projeto, Wikimedia, portais de notícias e órgãos ambientais locais (links fornecidos pela equipe).
+      </p>
+      <ul style="color:var(--muted);margin-top:8px">
+        <li>Lista de imagens fornecida pela equipe (ex.: brasil247, Shopify CDN, Coripa, Wikimedia, Prefeitura locais).</li>
+        <li>Dados científicos: resumos de órgãos ambientais e literatura educativa (incluir referências completas quando publicar).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Chatbot Aside (inicialmente oculto) -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Chatbot-IA"
+      agent-id="7e9ea28d-fc2a-4f18-a435-1d31267d9a34"
+      language-code="pt-br">
+    </df-messenger>
+
+  <footer>
+    <div>
+      <small>Equipe: Enzo S. Ferreira · Miguel C. Cardoso · Pedro H. A. Souza · Julia Queiroz · Hailla C. S. de Abr</small>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <a href="#top" id="backToTop">Voltar ao topo</a>
+      <small id="yearPlaceholder"></small>
+    </div>
+  </footer>
+
+ <!-- MODAL DE RECONHECIMENTO FACIAL -->
+<div id="cameraModal" class="camera-modal" aria-hidden="true">
+  <div class="camera-modal-content">
+    <button id="fecharModal" class="camera-close" title="Fechar">❌</button>
+    <h2 class="camera-title">Reconhecimento Facial</h2>
+    <div class="camera-video-box">
+      <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div class="camera-controls">
+      <button id="tirarFoto" class="camera-btn">📸 Tirar Foto</button>
+    </div>
+    <p id="modalStatus" class="camera-status">Aguardando...</p>
+    <canvas id="fotoCanvas" style="display:none;"></canvas>
+  </div>
+
+<script defer src="script.js"></script>
+</body>
+</html>
