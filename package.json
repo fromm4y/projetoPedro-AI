@@ -1,7 +1,8 @@
 {
-  "name": "maysa-projeto-ia",
+  "name": "projetopedro-ai",
   "version": "1.0.0",
-  "main": "index.js",
+  "type":"module",
+  "main": "server.js",
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "abbrev": "^1.1.1",
